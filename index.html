@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081a2d">
+  <meta name="description" content="Полярная экспедиция — мини-платформер на чистом JavaScript.">
+  <title>Полярная экспедиция — платформер на JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="header">
+      <div class="brand-mark" aria-hidden="true">✦</div>
+      <div class="heading">
+        <div class="eyebrow">МИНИ-ИГРА · HTML / CSS / JAVASCRIPT</div>
+        <h1>Полярная <span>экспедиция</span></h1>
+        <p>Пройди два полярных маршрута, собери кристаллы и доберись до финальной базы.</p>
+      </div>
+      <div class="header-stamp" aria-hidden="true">АРКТИКА<br><b>02 УРОВНЯ</b></div>
+    </header>
+
+    <section class="game-shell" aria-label="Игра Полярная экспедиция">
+      <div class="scorebar" aria-live="polite">
+        <div class="stat"><span class="stat-label">АРТЕФАКТЫ</span><strong id="items-count">0 / 3</strong></div>
+        <div class="stat"><span class="stat-label">ОЧКИ</span><strong id="score">0</strong></div>
+        <div class="stat"><span class="stat-label">ВРЕМЯ</span><strong id="time">00:00</strong></div>
+        <div class="stat"><span class="stat-label">РЕКОРД</span><strong id="best">0</strong></div>
+        <div class="status-light"><span id="status-dot" class="status-dot"></span><span id="state-label">ОЖИДАНИЕ</span></div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="1000" height="560" aria-label="Игровое поле: полярный платформер" role="img">
+          Ваш браузер не поддерживает Canvas. Откройте игру в современном браузере.
+        </canvas>
+        <div class="screen-overlay" id="overlay">
+          <div class="overlay-panel">
+            <div class="overlay-kicker" id="overlay-kicker">ЗАДАНИЕ ЭКСПЕДИЦИИ</div>
+            <h2 id="overlay-title">Добро пожаловать<br>на ледяной маршрут</h2>
+            <p id="overlay-text">Прыгайте между платформами, заберите 3 кристалла и доберитесь до маяка. Остерегайтесь ледяной воды и разлома.</p>
+            <button class="overlay-action" id="overlay-action" type="button">
+              <span id="overlay-action-text">Начать игру</span>
+              <span class="overlay-action-arrow" aria-hidden="true">➜</span>
+            </button>
+          </div>
+        </div>
+        <div class="world-label" id="world-label" aria-hidden="true">СЕКТОР 07 · ЛЕДЯНОЙ МАРШРУТ</div>
+        <div class="level-indicator" id="level-number" aria-live="polite">УРОВЕНЬ 1 / 2</div>
+      </div>
+
+      <div class="controls-bar">
+        <div class="main-controls">
+          <button type="button" class="btn btn-primary" id="start-btn">▶ <span>Начать игру</span></button>
+          <button type="button" class="btn btn-secondary" id="pause-btn" disabled>Ⅱ <span>Пауза</span></button>
+          <button type="button" class="btn btn-secondary" id="restart-btn">↻ <span>Заново</span></button>
+        </div>
+        <p class="controls-caption"><b>Движение:</b> ← → или A / D <span class="separator">·</span> <b>Прыжок:</b> W или Пробел <span class="separator">·</span> <b>Пауза:</b> Esc / P</p>
+      </div>
+
+      <div class="touch-controls" aria-label="Экранное управление для телефона">
+        <div class="direction-controls">
+          <button class="touch-btn" type="button" data-control="left" aria-label="Влево">←</button>
+          <button class="touch-btn" type="button" data-control="right" aria-label="Вправо">→</button>
+        </div>
+        <button class="touch-btn touch-jump" type="button" data-control="jump" aria-label="Прыжок">↑ <span>ПРЫЖОК</span></button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div><span class="small-star">✧</span> <b>Цель:</b> Два уровня, по 3 кристалла на каждом. Только после их сбора открывается финиш.</div>
+      <div>Без библиотек и игровых движков. Прогресс рекорда хранится в браузере.</div>
+    </footer>
+  </main>
+</body>
+</html>
